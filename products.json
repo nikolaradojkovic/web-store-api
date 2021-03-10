@@ -1,0 +1,14 @@
+{
+  "result": "ok",
+  "data": [
+    {
+      "id": "0",
+      "prod_name": "name",
+      "prod_desc": "desc",
+      "prod_img": "src",
+      "prod_price": "0.00",
+      "prod_quantity": "100",
+      "prod_discount": "1"
+    }
+  ]
+}

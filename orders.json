@@ -1,0 +1,29 @@
+{
+    "Result": "ok",
+    "data": [
+        {
+            "id": "0",
+            "customer": {
+                "cus_email": "mail.com",
+                "cus_credentials": "FirstName LastName",
+                "cus_address": "address",
+                "cus_phone": "000 000000"
+            },
+            "products": [
+                {
+                    "prod_id": "id",
+                    "prod_name": "name",
+                    "prod_price": "0.00",
+                    "prod_quantity": "1"
+                },
+                {
+                    "prod_id": "id2",
+                    "prod_name": "name3",
+                    "prod_price": "0.004",
+                    "prod_quantity": "15"
+                }
+            ],
+            "order_received": "false"
+        }
+    ]
+}

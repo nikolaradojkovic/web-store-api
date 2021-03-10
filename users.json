@@ -1,0 +1,11 @@
+{
+  "Result": "ok",
+  "data": [
+    {
+      "id": "0",
+      "email": "mail.com",
+      "password": "md5pass",
+      "roll": "0"
+    }
+  ]
+}
