@@ -45,6 +45,9 @@ app.use('/orders', ordersRoute);
 app.get('/', (req, res)=>{
     res.send("Hello");
 })
+app.get('/test', (req, res)=>{
+    res.send("Updated");
+})
 
 /*app.get('/products', (req, res)=>{
     res.send(products);
