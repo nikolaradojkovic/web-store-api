@@ -3,7 +3,6 @@ const products = require('./products.json');
 const users = require('./users.json');
 const orders = require('./orders.json');
 const mongoose = require('mongoose')
-const cors = require('cors')
 require('dotenv/config')
 
 const express = require('express');
@@ -15,7 +14,17 @@ const Joi = require('joi');
 app.use(bodyParser.json()); //Make sure u have added this line
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(cors());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", req.header('Origin'));
+    res.header("Access-Control-Allow-Credentials", true);
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    res.header("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, DELETE");
+    next();
+});
+
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECTION,
     {useNewUrlParser:true},
