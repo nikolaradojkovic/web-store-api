@@ -3,12 +3,14 @@ const products = require('./products.json');
 const users = require('./users.json');
 const orders = require('./orders.json');
 const mongoose = require('mongoose')
+const cors = require('cors')
 require('dotenv/config')
 
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
+app.use(cors())
 
 //app.use(express.json());
 app.use(bodyParser.json()); //Make sure u have added this line
