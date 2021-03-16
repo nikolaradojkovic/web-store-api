@@ -53,6 +53,18 @@ router.delete('/:id', async (req, res)=>{
     }
 });
 
+router.patch('/confirm/:id', async (req, res)=>{
+    try{
+        const updatedPost = await Order.updateOne({_id: req.params.id},{$set:{
+                order_received:true
+            }
+        });
+        res.json(updatedPost)
+    }catch (err) {
+        res.json({message: err})
+    }
+});
+
 
 
 module.exports = router;

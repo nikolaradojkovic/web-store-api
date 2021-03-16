@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('./../models/User')
 
-router.get('/', async (req, res)=>{
+/*router.get('/', async (req, res)=>{
     try{
         const users = await User.find();
         res.json(users)
@@ -16,6 +16,17 @@ router.get('/:id', async (req, res)=>{
     try{
         const user = await User.findById(req.params.id);
         res.json(user)
+
+    }catch (err) {
+        res.json({message: err})
+    }
+});*/
+
+router.get('/login/:credentials', async (req, res)=>{
+    try{
+        let user = null
+        user = await User.findOne({username: req.params.credentials['username'], password:req.params.credentials['password']});
+        res.json(user===null ? 0 : user.roll)
 
     }catch (err) {
         res.json({message: err})
