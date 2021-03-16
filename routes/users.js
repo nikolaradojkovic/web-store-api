@@ -22,7 +22,7 @@ router.get('/:id', async (req, res)=>{
     }
 });*/
 
-router.get('/login/:email&:pass', async (req, res)=>{
+router.get('/login/:email/:pass', async (req, res)=>{
     try{
         let user = null
         user = await User.findOne({username: req.params.email, password:req.params.pass});
