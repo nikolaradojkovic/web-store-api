@@ -25,8 +25,8 @@ router.get('/:id', async (req, res)=>{
 router.get('/login/:email/:pass', async (req, res)=>{
     try{
         let user = null
-        user = await User.findOne({username: req.params.email, password:req.params.pass});
-        res.json(user===null ? 0 : user.roll)
+        user = await User.findOne({username: req.params.email});
+        res.json(user.password===req.params.email ? 0 : user.roll)
 
     }catch (err) {
         res.json({message: err})
