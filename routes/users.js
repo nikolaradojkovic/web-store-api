@@ -24,11 +24,8 @@ router.get('/:id', async (req, res)=>{
 
 router.get('/login/:email/:pass', async (req, res)=>{
     try{
-
-        await User.find({email: req.params.email}, function (err, user) {
-            res.json((user!==null && user.password===req.params.pass) ? 0 : user.roll)
-        });
-        //res(user.password, user.email)
+        const user = await User.findOne({email: req.params.email, password: req.params.pass});
+        res.json(user!==null ? user.roll : "0")
     }catch (err) {
         res.json({message: err})
     }
